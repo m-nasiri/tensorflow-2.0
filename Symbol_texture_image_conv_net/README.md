@@ -63,11 +63,11 @@ Running `$ python make_symbol_texture_image_dataset.py` will make a dataset. Dat
  
 Samples of images in datast.
 
-![alt text](https://github.com/m-nasiri/tensorflow/blob/master/symbol_texture_image_conv_net/images/images.png)
+![alt text](https://github.com/m-nasiri/tensorflow-2.0/blob/master/Symbol_texture_image_conv_net/images/images.png)
 
 Run `$ python symbol_texture_conv_net.py` to train the model. While trainig summeries will be writen in log_dir and using Tensorboard you can monitor training process. The following image shows accuracy and loss value in diffrent epochs.
 
-![alt text](https://github.com/m-nasiri/tensorflow/blob/master/symbol_texture_image_conv_net/images/acc_loss.png)
+<!-- ![alt text](https://github.com/m-nasiri/tensorflow/blob/master/symbol_texture_image_conv_net/images/acc_loss.png) -->
 
 
 
