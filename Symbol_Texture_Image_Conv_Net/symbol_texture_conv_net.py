@@ -1,6 +1,6 @@
 #------------------------------------------------------------------------------------------#
 # coder: Majid Nasiri
-# github: https://github.com/m-nasiri/tensorflow/tree/master/symbol_texture_image_conv_net
+# github: https://github.com/m-nasiri/tensorflow-2.0/
 # date: 2018-Feb-04
 #------------------------------------------------------------------------------------------#
 
