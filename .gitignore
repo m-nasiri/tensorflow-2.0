@@ -1,3 +1,4 @@
 Symbol_Texture_Image_Conv_Net/dataset/*
 Symbol_Texture_Image_Conv_Net/dataset_80_20/*
 **/logs/*
+**/dataset/*
