@@ -2,3 +2,6 @@ Symbol_Texture_Image_Conv_Net/dataset/*
 Symbol_Texture_Image_Conv_Net/dataset_80_20/*
 **/logs/*
 **/dataset/*
+**/__pycache__/*
+/Classify_My_Own_Images_Using_CNN/mnist.npz
+/Classify_My_Own_Images_Using_MobileNet_Backend/mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_160_no_top.h5
