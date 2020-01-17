@@ -7,24 +7,24 @@ After running the script we must have a folder structured like following in the 
 folder beside the script. train_images_list.txt contain path to images in train folder and 
 test_images_list.txt contain path to images in test folder.
 
---- dataset
-       |
-       |-- train
-       |    |__ image_0.png
-       |    |__ image_1.png
-       |    |__ ...
-       |    |__ image_N.png
-       |
-       |-- test
-       |    |__ image_0.png
-       |    |__ image_1.png
-       |    |__ ...
-       |    |__ image_N.png
-       |
-       |-- test_images_list.txt
-       |-- test_labels_list.txt
-       |-- train_images_list.txt
-       |-- train_labels_list.txt
+       --- dataset
+              |
+              |-- train
+              |    |__ image_0.png
+              |    |__ image_1.png
+              |    |__ ...
+              |    |__ image_N.png
+              |
+              |-- test
+              |    |__ image_0.png
+              |    |__ image_1.png
+              |    |__ ...
+              |    |__ image_N.png
+              |
+              |-- test_images_list.txt
+              |-- test_labels_list.txt
+              |-- train_images_list.txt
+              |-- train_labels_list.txt
 
 You can prepare your own dataset as our structure. 
 dataset_utils.py contain functions to read images and labels for train and test portion of
