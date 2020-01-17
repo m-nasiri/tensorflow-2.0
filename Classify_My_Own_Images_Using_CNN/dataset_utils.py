@@ -10,8 +10,8 @@
     prefetch and batch data for model. 
 """
 
-import tensorflow as tf 
 import os
+import tensorflow as tf 
 
 N_CLASSES = 10
 

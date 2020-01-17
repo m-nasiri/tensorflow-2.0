@@ -5,42 +5,86 @@
 #------------------------------------------------------------------------------------------#
 
 """
-    In this code we use tf.data api to read images and labels from folders. 
-    At the first step we extract MNIST dataset images and store all images in train and test 
-    folders and we prepare a list of train and test images and also train and test labels by
-    running extract_mnist_images.py 
-    After running the script we must have a folder structured like following in the main 
-    folder beside the script. train_images_list.txt contain path to images in train folder and 
-    test_images_list.txt contain path to images in test folder.
+    Classify our own images using MobileNet_v2. 
+    In fact this code is to show how to use pretrained popular architectures as feature 
+    extractor and place multiple layers on top of them for own application. In this code we 
+    used MobileNet_v2 as backend, obviously it can be replaced with others like (ResNet, ...).
+    
+    * The whole pipline of the project
+    >>> creating train and test splits of our dataset.
+        here we create an synthatic image dataset of seven symbols. Symbol names are, "spadesuit",
+        "clubsuit", "Join", "Omega", "Phi", "Psi", "heartsuit". this dataset includes images 
+        with diffrent sizes. obviously this dataset can be replaced with other datasets if the 
+        dataset structure remain inact. Dataset structure is as follows.
 
-    --- dataset
-           |
-           |-- train
-           |    |__ image_0.png
-           |    |__ image_1.png
-           |    |__ ...
-           |    |__ image_N.png
-           |
-           |-- test
-           |    |__ image_0.png
-           |    |__ image_1.png
-           |    |__ ...
-           |    |__ image_N.png
-           |
-           |-- test_images_list.txt
-           |-- test_labels_list.txt
-           |-- train_images_list.txt
-           |-- train_labels_list.txt
+        ---- dataset
+                '
+                '---- train
+                '       '
+                '       '---- category_1
+                '       '       '
+                '       '       '---- image_1.png
+                '       '       '---- image_2.png
+                '       '       '---- ....
+                '       '       '---- image_n.png
+                '       '
+                '       '---- category_2
+                '       '       '
+                '       '       '---- image_1.png
+                '       '       '---- image_2.png
+                '       '       '---- ....
+                '       '       '---- image_n.png
+                '       '
+                '       '----  ...
+                '       '       
+                '       '       
+                '       '
+                '       '---- category_m
+                '               '
+                '               '---- image_1.png
+                '               '---- image_2.png
+                '               '---- ....
+                '               '---- image_n.png
+                '       
+                ' --- test 
+                        '
+                        '---- category_1
+                        '       '
+                        '       '---- image_1.png
+                        '       '---- image_2.png
+                        '       '---- ....
+                        '       '---- image_n.png
+                        '
+                        '---- category_2
+                        '       '
+                        '       '---- image_1.png
+                        '       '---- image_2.png
+                        '       '---- ....
+                        '       '---- image_n.png
+                        '
+                        '----  ...
+                        '       
+                        '       
+                        '
+                        '---- category_m
+                                '
+                                '---- image_1.png
+                                '---- image_2.png
+                                '---- ....
+                                '---- image_n.png
 
-    You can prepare your own dataset as our structure. 
-    dataset_utils.py contain functions to read images and labels for train and test portion of
-    dataset. These function uses tf.data api to read, prefetch and batch data for model.
+    >>> Making a list of images and labels of train and test split.
+        by running 
 
-    mnist_tfdata_cnn.py is the main code to read images and labels, building a CNN model and feed 
-    train and test data to model for training and evaluation. 
+    >>> Loading pretrained architecture weights and placeing some layers on top of it. then train
+        the model in two diffrent scenario. Finetuning backend weight or use the weight as is. these
+        two scenarios will lead two different results. it's clear that tuning backend will result 
+        better performance.
 
-    We used Keras an high level api form tensorflow 2.0 to build our sequentioal model.
 
+    In this code we used tf.data api to read images and labels from folders. And we used Keras an 
+    high level api form tensorflow 2.0 to build our sequentioal model. 
+    
 """
 
 from __future__ import absolute_import
@@ -69,9 +113,9 @@ test_dataset = dataset_utils.input_fn(is_training=False, batch_size=1)
 # Create the base model from the pre-trained model MobileNet V2
 base_model = tf.keras.applications.MobileNetV2(input_shape=(cfg.IMG_HIGHT, cfg.IMG_WIDTH, 3),
                                                include_top=False,
-                                               weights="mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_160_no_top.h5")
+                                               weights="imagenet")
 
-base_model.trainable = True
+base_model.trainable = cfg.FINETUNE
 global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
 prediction_layer = tf.keras.layers.Dense(cfg.N_CLASSES, activation='softmax')
 
@@ -113,7 +157,11 @@ plt.legend(['train', 'test'], loc='upper left')
 plt.grid(True)
 plt.show()
 
+plt.savefig("acc_and_loss.png", dpi=200)
+
+
 # # try an image
+# TODO
 # import cv2
 # im = cv2.imread("./dataset/test/image_0.png") / 255.0
 # img = np.expand_dims(im, axis=0)

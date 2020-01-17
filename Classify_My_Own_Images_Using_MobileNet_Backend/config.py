@@ -42,4 +42,7 @@ class Config(object):
     BATCH_SIZE = 32
     N_EPOCHS = 5
 
+    # whether finetune backend architecture or leave the weights intact.
+    FINETUNE = True    
+
     
