@@ -84,9 +84,7 @@ Change model and training parameters in config.py script.
 
 1 - Making image dataset
 
-    ```
     python create_symbol_texture_image_dataset.py` 
-    ```
 
 2- Make a text file list of all images and labels.
     Running `$ python make_images_and_labels_lists.py` 
