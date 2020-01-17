@@ -4,12 +4,6 @@
 # date: 2020-January-16
 #------------------------------------------------------------------------------------------#
 
-"""
-Classify My Own Images Using MobileNet_v2 Backend
-Base Configurations class.
-Written by Majid Nasiri
-"""
-
 import numpy as np
 
 # Base Configuration Class
@@ -23,10 +17,10 @@ class Config(object):
     # Number of classes
     N_CLASSES = len(CLASS_NAMES)
 
-    # Dataset Directorty - Place your own dataset here of make dataset using make_symbol_texture_image_dataset.py
+    # Dataset Directorty - Place your own dataset here or make dataset using make_symbol_texture_image_dataset.py
     DATA_DIR = "./dataset"
 
-    # Number of samples per class for train and test
+    # Number of samples per class for train and test splits
     N_TRAIN_PER_CLASS = 800
     N_TEST_PER_CLASS = 200
 
@@ -40,9 +34,9 @@ class Config(object):
 
     # Training Parameters
     BATCH_SIZE = 32
-    N_EPOCHS = 5
+    N_EPOCHS = 10
 
     # whether finetune backend architecture or leave the weights intact.
-    FINETUNE = True    
+    FINETUNE = True 
 
     

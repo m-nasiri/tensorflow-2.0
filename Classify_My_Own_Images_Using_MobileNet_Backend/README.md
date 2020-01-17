@@ -119,9 +119,13 @@ Change model and training parameters in config.py script.
 
 Results with fine-tuning scenario.
 <br />
+![alt text](https://github.com/m-nasiri/tensorflow-2.0/blob/master/Classify_My_Own_Images_Using_MobileNet_Backend/images/finetune_terminal.png)
+<br />
 ![alt text](https://github.com/m-nasiri/tensorflow-2.0/blob/master/Classify_My_Own_Images_Using_MobileNet_Backend/images/finetune.png)
 <br />
 Results without fine-tuning scenario.
+<br />
+![alt text](https://github.com/m-nasiri/tensorflow-2.0/blob/master/Classify_My_Own_Images_Using_MobileNet_Backend/images/nofinetune_terminal.png)
 <br />
 ![alt text](https://github.com/m-nasiri/tensorflow-2.0/blob/master/Classify_My_Own_Images_Using_MobileNet_Backend/images/nofinetune.png)
 <br />

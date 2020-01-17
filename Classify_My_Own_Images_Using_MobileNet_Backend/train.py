@@ -124,7 +124,7 @@ model.add(base_model)
 model.add(global_average_layer)
 model.add(prediction_layer)
 
-model.compile(optimizer="adam", 
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001),
               loss=tf.keras.losses.categorical_crossentropy,
               metrics=["accuracy"])
 
@@ -157,16 +157,6 @@ plt.legend(['train', 'test'], loc='upper left')
 plt.grid(True)
 plt.show()
 
-plt.savefig("acc_and_loss.png", dpi=200)
-
 
 # # try an image
 # TODO
-# import cv2
-# im = cv2.imread("./dataset/test/image_0.png") / 255.0
-# img = np.expand_dims(im, axis=0)
-# pred = model.predict_classes(img)
-
-# plt.imshow(im)
-# plt.title("prediction: %d" % pred)
-# plt.show()
