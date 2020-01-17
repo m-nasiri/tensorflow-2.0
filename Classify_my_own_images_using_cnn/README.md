@@ -1,6 +1,6 @@
     In this code we use tf.data api to read images and labels from folders. 
     At the first step we extract MNIST dataset images and store all images in train and test 
-    folders and we prepare a list of train and test images and also train and test labels by
+    folders then we prepare a list of train and test images and also train and test labels by
     running extract_mnist_images.py 
     After running the script we must have a folder structured like following in the main 
     folder beside the script. train_images_list.txt contain path to images in train folder and 
