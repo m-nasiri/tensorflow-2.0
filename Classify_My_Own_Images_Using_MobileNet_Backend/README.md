@@ -83,8 +83,9 @@ high level api form tensorflow 2.0 to build our sequentioal model.
 Change model and training parameters in config.py script.
 
 1 - Making image dataset
+
     ```
-    `$ python create_symbol_texture_image_dataset.py` 
+    python create_symbol_texture_image_dataset.py` 
     ```
 
 2- Make a text file list of all images and labels.
