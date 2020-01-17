@@ -10,61 +10,61 @@ used MobileNet_v2 as backend, obviously it can be replaced with others like (Res
     with diffrent sizes. obviously this dataset can be replaced with other datasets if the 
     dataset structure remain inact. Dataset structure is as follows.
 
-    ---- dataset
-            '
-            '---- train
-            '       '
-            '       '---- category_1
-            '       '       '
-            '       '       '---- image_1.png
-            '       '       '---- image_2.png
-            '       '       '---- ....
-            '       '       '---- image_n.png
-            '       '
-            '       '---- category_2
-            '       '       '
-            '       '       '---- image_1.png
-            '       '       '---- image_2.png
-            '       '       '---- ....
-            '       '       '---- image_n.png
-            '       '
-            '       '----  ...
-            '       '       
-            '       '       
-            '       '
-            '       '---- category_m
-            '               '
-            '               '---- image_1.png
-            '               '---- image_2.png
-            '               '---- ....
-            '               '---- image_n.png
-            '       
-            ' --- test 
-                    '
-                    '---- category_1
-                    '       '
-                    '       '---- image_1.png
-                    '       '---- image_2.png
-                    '       '---- ....
-                    '       '---- image_n.png
-                    '
-                    '---- category_2
-                    '       '
-                    '       '---- image_1.png
-                    '       '---- image_2.png
-                    '       '---- ....
-                    '       '---- image_n.png
-                    '
-                    '----  ...
-                    '       
-                    '       
-                    '
-                    '---- category_m
-                            '
-                            '---- image_1.png
-                            '---- image_2.png
-                            '---- ....
-                            '---- image_n.png
+      ------- dataset
+                '
+                '---- train
+                '       '
+                '       '---- category_1
+                '       '       '
+                '       '       '---- image_1.png
+                '       '       '---- image_2.png
+                '       '       '---- ....
+                '       '       '---- image_n.png
+                '       '
+                '       '---- category_2
+                '       '       '
+                '       '       '---- image_1.png
+                '       '       '---- image_2.png
+                '       '       '---- ....
+                '       '       '---- image_n.png
+                '       '
+                '       '----  ...
+                '       '       
+                '       '       
+                '       '
+                '       '---- category_m
+                '               '
+                '               '---- image_1.png
+                '               '---- image_2.png
+                '               '---- ....
+                '               '---- image_n.png
+                '       
+                ' --- test 
+                        '
+                        '---- category_1
+                        '       '
+                        '       '---- image_1.png
+                        '       '---- image_2.png
+                        '       '---- ....
+                        '       '---- image_n.png
+                        '
+                        '---- category_2
+                        '       '
+                        '       '---- image_1.png
+                        '       '---- image_2.png
+                        '       '---- ....
+                        '       '---- image_n.png
+                        '
+                        '----  ...
+                        '       
+                        '       
+                        '
+                        '---- category_m
+                                '
+                                '---- image_1.png
+                                '---- image_2.png
+                                '---- ....
+                                '---- image_n.png
 
 >>> Making a list of images and labels of train and test split.
     If you used your own dataset with same structure as me, using make_images_and_labels_lists.py
