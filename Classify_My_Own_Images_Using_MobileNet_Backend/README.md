@@ -4,7 +4,7 @@ extractor and place multiple layers on top of them for own application. In this 
 used MobileNet_v2 as backend, obviously it can be replaced with others like (ResNet, ...).
     
 * The whole pipline of the project
-    **Creating train and test splits of our dataset.
+    ** Creating train and test splits of our dataset.
     here we create an synthatic image dataset of seven symbols. Symbol names are, "spadesuit",
     "clubsuit", "Join", "Omega", "Phi", "Psi", "heartsuit". this dataset includes images 
     with diffrent sizes. obviously this dataset can be replaced with other datasets if the 
