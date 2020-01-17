@@ -79,11 +79,22 @@ In this code we used tf.data api to read images and labels from folders. And we 
 high level api form tensorflow 2.0 to build our sequentioal model. 
 
 ### Examples of synthatic dataset
+spadesuit
 ![alt text](https://github.com/m-nasiri/tensorflow-2.0/blob/master/Classify_My_Own_Images_Using_MobileNet_Backend/images/image_0.png)
 <br />
+clubsuit
 ![alt text](https://github.com/m-nasiri/tensorflow-2.0/blob/master/Classify_My_Own_Images_Using_MobileNet_Backend/images/image_1.png)
 <br />
+Join
 ![alt text](https://github.com/m-nasiri/tensorflow-2.0/blob/master/Classify_My_Own_Images_Using_MobileNet_Backend/images/image_2.png)
+<br />
+Omega
+<br />
+Phi
+<br />
+Psi
+<br />
+heartsuit
 <br />
 ![alt text](https://github.com/m-nasiri/tensorflow/blob/master/symbol_texture_image_conv_net/images/images.png)
 
