@@ -2,6 +2,7 @@
     At the first step we extract MNIST dataset images and store all images in train and test 
     folders then we prepare a list of train and test images and also train and test labels by
     running extract_mnist_images.py 
+   
     After running the script we must have a folder structured like following in the main 
     folder beside the script. train_images_list.txt contain path to images in train folder and 
     test_images_list.txt contain path to images in test folder.
@@ -33,3 +34,5 @@
     train and test data to model for training and evaluation. 
 
     We used Keras an high level api form tensorflow 2.0 to build our sequentioal model.
+    
+    `python extract_mnist_images.py` to extract MNIST dataset images to train and test folders.
