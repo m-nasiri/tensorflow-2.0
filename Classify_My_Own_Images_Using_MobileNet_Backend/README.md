@@ -84,13 +84,15 @@ Change model and training parameters in config.py script.
 
 1 - Making image dataset
 
-    python create_symbol_texture_image_dataset.py` 
+    python create_symbol_texture_image_dataset.py
 
 2- Make a text file list of all images and labels.
-    Running `$ python make_images_and_labels_lists.py` 
+    
+    python make_images_and_labels_lists.py
 
 3- Training model with or without backend fine-tuning.
-    Running `$ python train.py` 
+    
+    python train.py
 
 
 ![alt text](https://github.com/m-nasiri/tensorflow/blob/master/symbol_texture_image_conv_net/images/images.png)
