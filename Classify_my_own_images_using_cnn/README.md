@@ -35,4 +35,7 @@ train and test data to model for training and evaluation.
 
 We used Keras an high level api form tensorflow 2.0 to build our sequentioal model.
     
-`python extract_mnist_images.py` to extract MNIST dataset images to train and test folders.
+`$ python extract_mnist_images.py` to extract MNIST dataset images to train and test folders.
+`$ python mnist_tfdata_cnn.py` to read images and labels and push to CNN and train the model.
+
+
