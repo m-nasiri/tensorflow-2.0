@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------#
 #coder: Majid Nasiri
-#github: https://github.com/m-nasiri/tensorflow-2.0/1-Basics/hello_tensorflow_2.0.py
+#github: https://github.com/m-nasiri/tensorflow-2.0/
 #date: 2019-November-01
 #-----------------------------------------------------------------------------#
 
@@ -32,7 +32,6 @@ var = tf.Variable(rnd)
 
 # var.assign(rnd+1)
 # print(var)
-
 
 # gradient
 a = tf.random.normal(shape=(2, 2))
