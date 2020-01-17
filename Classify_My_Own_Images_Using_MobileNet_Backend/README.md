@@ -78,6 +78,9 @@ used MobileNet_v2 as backend, obviously it can be replaced with others like (Res
 In this code we used tf.data api to read images and labels from folders. And we used Keras an 
 high level api form tensorflow 2.0 to build our sequentioal model. 
 
+### Examples of synthatic dataset
+![alt text](https://github.com/m-nasiri/tensorflow/blob/master/symbol_texture_image_conv_net/images/images.png)
+
 
 ### How to use:
 Change model and training parameters in config.py script.
@@ -94,8 +97,6 @@ Change model and training parameters in config.py script.
     
     python train.py
 
-
-![alt text](https://github.com/m-nasiri/tensorflow/blob/master/symbol_texture_image_conv_net/images/images.png)
 
 Run `$ python symbol_texture_conv_net.py` to train the model. While trainig summeries will be writen in log_dir and using Tensorboard you can monitor training process. The following image shows accuracy and loss value in diffrent epochs.
 
