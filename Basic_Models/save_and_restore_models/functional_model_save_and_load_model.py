@@ -13,39 +13,20 @@ import numpy as np
 x_train = np.expand_dims(x_train, axis=-1).astype('float32') / 255
 x_test = np.expand_dims(x_test, axis=-1).astype('float32') / 255
 
-
-class FUNCTIONAL_MODEL(tf.keras.Model):
-    def __init__(self):
-        super(FUNCTIONAL_MODEL, self).__init__()
-        self.conv1 = layers.Conv2D(4,(3,3))
-        self.maxpool1 = layers.MaxPool2D((2,2), (2,2))
-        self.conv2 = layers.Conv2D(8,(3,3))
-        self.maxpool2 = layers.MaxPool2D((2,2), (2,2))
-        self.conv3 = layers.Conv2D(120,(3,3))
-        self.avgpool = layers.GlobalAveragePooling2D()
-        self.fc = layers.Dense(10, activation="softmax")
-
-    def call(self, x):
-        net = self.conv1(x)
-        net1 = self.maxpool1(net)
-        net = self.conv2(net1)
-        net = self.maxpool2(net)
-        net = self.conv3(net)
-        net = self.avgpool(net)
-        net = self.fc(net)
-        return net
-
-    def get_model(self):
-        inputs = tf.keras.Input(shape=(None, None, 1), name='input')
-        outputs = self.call(inputs)
-        model = tf.keras.Model(inputs, outputs, name='func_api')
-        return model
-
-
+def FUNCTIONAL_MODEL():
+    inputs = tf.keras.Input(shape=(None, None, 1), name='input')
+    net = layers.Conv2D(4,(3,3))(inputs)
+    net1 = layers.MaxPool2D((2,2), (2,2))(net)
+    net2 = layers.Conv2D(4,(3,3), padding="SAME")(net1)
+    net = tf.concat([net1, net2], axis=-1)
+    net = layers.Conv2D(120,(3,3))(net)
+    net = layers.GlobalAveragePooling2D()(net)
+    outputs = layers.Dense(10, activation="softmax")(net)
+    model = tf.keras.Model(inputs, outputs, name='func_api')
+    return model
 
 # Instantiate the model.
-model = FUNCTIONAL_MODEL().get_model()
-
+model = FUNCTIONAL_MODEL()
 
 loss = tf.keras.losses.SparseCategoricalCrossentropy()
 optimizer = tf.keras.optimizers.Adam()
